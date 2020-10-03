@@ -1,5 +1,3 @@
-
-
 let pokeDiv = document.getElementById('pokemon')
 
 var poke = Math.floor(Math.random()* 1050) + 1
@@ -13,3 +11,6 @@ fetch(req)
 .then(pokemon => {
     pokeDiv.innerHTML += `<p> ${pokemon.name} </p>`
 })
+
+var zip = 30605
+
