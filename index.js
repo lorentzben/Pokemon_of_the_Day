@@ -1,3 +1,6 @@
+var apiKey =
+var zip = 
+
 let pokeDiv = document.getElementById('pokemon')
 
 var poke = Math.floor(Math.random()* 1050) + 1
@@ -12,5 +15,11 @@ fetch(req)
     pokeDiv.innerHTML += `<p> ${pokemon.name} </p>`
 })
 
-var zip = 30605
-
+let weatherDiv = document.getElementById('weather')
+var weatherUrl = "http://api.weatherapi.com/v1/current.json?key="
+var wRequest = weatherUrl.concat(apiKey,'=',zip)
+fetch(wRequest)
+.then(res => res.json())
+.then(weather => {
+    weatherDiv.innerHTML += `<p> ${weather.current.condition.text} </p>`
+})
